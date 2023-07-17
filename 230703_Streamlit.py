@@ -117,7 +117,7 @@ with col2:
 
 
 
-tab1, tab2 = st.tabs(["Introducion", "Visualisation"])
+tab1, tab2 = st.tabs(["Introduction", "Visualisation"])
 
 with tab1:
     #--- HEADER SECTION ---
