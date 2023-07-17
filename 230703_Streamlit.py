@@ -13,7 +13,7 @@ import plotly.express as px
 
 
 #--- PROCESS DATA AREA ---
-file_path = 'C:/Users/get39559/Documents/00_FENES/01_Orbit/04_Standortbewertung/06_Streamlit/230704_Standorte.xlsx'
+file_path = 'C:/Users/get39559/Documents/00_FENES/01_Orbit/04_Standortbewertung/06_Streamlit/FENES-bio-methanation-potential/230704_Standorte.xlsx'
 df = pd.read_excel(file_path, usecols=["Standortnummer", "Typ", "Lat", "Lon", "m?gliche CH4 in kW", "Punktzahl gesamt", "Potenzial"])
 df.columns = ["Location number", "Technology", "lat", "lon", "possible methanation capacity in kW", "Evaluation Points", "Hydrogen Potential"]
 
