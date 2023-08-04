@@ -4,6 +4,9 @@ Created on Mon Jul  3 10:39:53 2023
 
 @author: get39559
 """
+
+#--- REQUIREMENTS ---
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -11,8 +14,8 @@ import plotly.express as px
 
 
 
-
 #--- PROCESS DATA AREA ---
+
 file_path = "230704_Standorte.xlsx"
 df = pd.read_excel(file_path, usecols=["Standortnummer", "Typ", "Lat", "Lon", "m?gliche CH4 in kW", "Punktzahl gesamt", "Potenzial"])
 df.columns = ["Location number", "Technology", "lat", "lon", "possible methanation capacity in kW", "Evaluation Points", "Hydrogen Potential"]
@@ -108,7 +111,7 @@ def load_map(input_df, size, map_style):
 st.set_page_config(page_title="Methanation potential Germany", page_icon=":factory:", layout="wide", initial_sidebar_state = "collapsed" )
 
 
-col1, col2, col3 = st.columns([6,2,2])
+col1, col2, col3 = st.columns([6,1,2])
 with col1:
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
@@ -128,22 +131,25 @@ with tab1:
     #--- HEADER SECTION ---
     st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     st.write("")
-    st.markdown('<div style="background-color: white; padding: 4px;"><h3 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h3></div>', unsafe_allow_html=True)
+    st.markdown('<div style="background-color: white; padding: 4px;"><h2 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h2></div>', unsafe_allow_html=True)
     #st.write("")
 
 
     #--- DESCRIPTION SECTION ---
     #st.subheader('Introduction')
-    st.write(
-        """
-        The ORBIT II research project is concerned with the conversion of carbon dioxide (CO2) and hydrogen (H2) to methane by means of biological methanation. The focus is on the storage of electricity from renewable sources in the form of methane. Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated. For this purpose, different waste gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants, wastewater treatment plants and landfills are tested.
-
-        ORBIT II aims to integrate power-to-gas plants, optimize system integration and reduce costs. In addition, the use of biogenic waste materials as educt gases for methanation is being advanced.
-
-        To this end, a site assessment was conducted for these technologies and industries.
-        Each site received a score consisting of a technology type score and a regional score. The technology type score was based on waste gas composition, steadiness of waste gas availability, and other criteria. The regional assessment was performed at the county level through survey analysis regarding the energy transition.
-
-        """)
+    st.write("The [ORBIT II](https://orbit-projekt.de/) research project is concerned with the conversion of carbon dioxide")
+    st.latex(' H_{2}')
+    st.write("and hydrogen")
+    st.write("""to methane by means of biological methanation. The focus is on the storage of electricity from renewable sources in the form of methane
+             Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated.
+             For this purpose, different waste gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
+             wastewater treatment plants and landfills are tested. ORBIT II aims to integrate power-to-gas plants, optimize system integration and reduce costs.
+             In addition, the use of biogenic waste materials as educt gases for methanation is being advanced.
+             To this end, a site assessment was conducted for these technologies and industries.
+             Each site received a score consisting of a technology type score and a regional score.
+             The technology type score was based on waste gas composition, steadiness of waste gas availability, and other criteria.
+             The regional assessment was performed at the county level through survey analysis regarding the energy transition.
+             """)
         
     st.subheader('Map description')
     st.write(
@@ -167,7 +173,7 @@ with tab2:
     #--- MAP FILTER ---
     with col2:
         
-        st.title("Data Adjustments")
+        st.subheader("Data Adjustments")
         industry_type = st.selectbox(
         "Technology Type",
         np.insert(df.Technology.unique(), 0, "All",))
@@ -175,12 +181,12 @@ with tab2:
            "Range of possible methanation capacity in Groups", 0, 3, (1, 3), step=1, help="0: <100 kW, 1: 100-500 kW,  2: 500-1000 kW, 3: > 1000 kW \n (A methanation capacity lower than 100 kW is not economical due to the number of full load hours)")
         
         
-        st.title("Evaluation Adjustments")
+        st.subheader("Evaluation Adjustments")
         st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
 
 
 
-        st.title("Map Adjustments")  
+        st.subheader("Map Adjustments")  
         size = st.slider(
         "Size of the dots", 0.5, 3.0, (1.0), step=0.5, help="Pick a size")
         map_style=st.selectbox("Background Mapstyle", {"carto-positron","carto-darkmatter"})
