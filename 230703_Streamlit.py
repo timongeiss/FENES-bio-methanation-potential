@@ -108,7 +108,7 @@ def load_map(input_df, size, map_style):
 st.set_page_config(page_title="Methanation potential Germany", page_icon=":factory:", layout="wide", initial_sidebar_state = "collapsed" )
 
 
-col1, col2, col3 = st.columns([6,1,1])
+col1, col2, col3 = st.columns([4,1,2])
 with col1:
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES) OTH Regensburg')
 with col3:
@@ -125,8 +125,7 @@ with tab1:
     #--- HEADER SECTION ---
     st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     st.write("")
-    st.write("")
-    st.markdown('<div style="background-color: white; padding: 5px;"><h1 style="color: #5B5B5B;">Methanation potential in German industries</h1></div>', unsafe_allow_html=True)
+    st.markdown('<div style="background-color: white; padding: 5px;"><h1 style="color: #5B5B5B;">Biological methanation potential in German industries</h1></div>', unsafe_allow_html=True)
     st.write("")
     #st.write("[orbit-projekt.de](https://orbit-projekt.de/)")
 
