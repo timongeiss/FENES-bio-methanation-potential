@@ -112,11 +112,11 @@ st.set_page_config(page_title="Methanation potential Germany", page_icon=":facto
 
 
 col1, col2, col3 = st.columns([6,1,2])
-with col1:
+with col2:
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
-with col2:
+with col1:
     st.image("https://www.fenes.net/wp-content/uploads/2021/12/2021_12_01_Logo_ORBIT-II_quadratisch.svg")
 with col3:
     st.image("https://gerotor.tech/wp-content/uploads/2018/03/Fenes-Logo-300x103.png")
@@ -137,10 +137,9 @@ with tab1:
 
     #--- DESCRIPTION SECTION ---
     #st.subheader('Introduction')
-    st.write("The [ORBIT II](https://orbit-projekt.de/) research project is concerned with the conversion of carbon dioxide")
-    st.latex(' H_{2}')
-    st.write("and hydrogen")
-    st.write("""to methane by means of biological methanation. The focus is on the storage of electricity from renewable sources in the form of methane
+    st.write("The [ORBIT II](https://orbit-projekt.de/) research project is concerned with the conversion of carbon dioxide and hydrogeno methane by means of biological methanation. ")
+    st.latex('$$\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}$$')
+    st.write("""The focus is on the storage of electricity from renewable sources in the form of methane
              Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated.
              For this purpose, different waste gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
              wastewater treatment plants and landfills are tested. ORBIT II aims to integrate power-to-gas plants, optimize system integration and reduce costs.
