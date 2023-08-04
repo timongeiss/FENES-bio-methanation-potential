@@ -108,12 +108,12 @@ def load_map(input_df, size, map_style):
 st.set_page_config(page_title="Methanation potential Germany", page_icon=":factory:", layout="wide", initial_sidebar_state = "collapsed" )
 
 
-col1, col2, col3 = st.columns([8,1,1])
+col1, col2, col3 = st.columns([6,2,2])
 with col1:
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
-    st.write("[orbit-projekt.de](https://orbit-projekt.de/)")
-with col3:
+    #st.write("[ORBIT II](https://orbit-projekt.de/)")
+with col2:
     st.image("https://www.fenes.net/wp-content/uploads/2021/12/2021_12_01_Logo_ORBIT-II_quadratisch.svg")
 with col3:
     st.image("https://gerotor.tech/wp-content/uploads/2018/03/Fenes-Logo-300x103.png")
@@ -128,8 +128,8 @@ with tab1:
     #--- HEADER SECTION ---
     st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     st.write("")
-    st.markdown('<div style="background-color: white; padding: 4px;"><h1 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h1></div>', unsafe_allow_html=True)
-    st.write("")
+    st.markdown('<div style="background-color: white; padding: 4px;"><h3 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h3></div>', unsafe_allow_html=True)
+    #st.write("")
 
 
     #--- DESCRIPTION SECTION ---
@@ -160,85 +160,61 @@ with tab1:
 
 
 with tab2:
+    st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
+    col1, col2 = st.columns([6,2])
+    
+    
     #--- MAP FILTER ---
-    with st.sidebar:
+    with col2:
         
         st.title("Data Adjustments")
-        
         industry_type = st.selectbox(
         "Technology Type",
-        np.insert(df.Technology.unique(), 0, "All",)
-        )
-        
-        
+        np.insert(df.Technology.unique(), 0, "All",))
         CH4_min, CH4_max = st.slider(
-           "Range of possible methanation capacity in Groups", 0, 3, (1, 3), step=1, help="0: <100 kW, 1: 100-500 kW,  2: 500-1000 kW, 3: > 1000 kW \n (A methanation capacity lower than 100 kW is not economical due to the number of full load hours)"
-       )
-    
-    
+           "Range of possible methanation capacity in Groups", 0, 3, (1, 3), step=1, help="0: <100 kW, 1: 100-500 kW,  2: 500-1000 kW, 3: > 1000 kW \n (A methanation capacity lower than 100 kW is not economical due to the number of full load hours)")
+        
+        
         st.title("Evaluation Adjustments")
         st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
-    
-    
-    
-    
-    
-    
-    
-        
-        st.title("Map Adjustments")
-        
+
+
+
+        st.title("Map Adjustments")  
         size = st.slider(
-        "Size of the dots", 0.5, 3.0, (1.0), step=0.5, help="Pick a size"
-    )
-        
-    
-        map_style=st.selectbox("Background Mapstyle", {"carto-positron", "stamen-terrain", "carto-darkmatter", "open-street-map"})
+        "Size of the dots", 0.5, 3.0, (1.0), step=0.5, help="Pick a size")
+        map_style=st.selectbox("Background Mapstyle", {"carto-positron","carto-darkmatter"})
     
         
-    
         
-    #--- MAP SECTION ---
-    col1, col2 = st.columns([7,1])
-    
+    #--- MAP SECTION --
     with col1:
-        #st.write("##")
-        #st.map(df, zoom = 6, use_container_width = False)
-        st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
-        st.markdown('<div style="background-color: white; padding: 3px;"><h3 style="color: #5B5B5B;"> << open the Sidebar to set custom Filters </h3></div>', unsafe_allow_html=True)
-
-        #st.subheader("<< open the Sidebar to set some Filters")
-        
-        
-    with col2:
-        st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
-        #st.markdown('<div style="background-color: white; padding: 3px;"><h3 style="color: #5B5B5B;"> << open the Sidebar to set custom Filters </h3></div>', unsafe_allow_html=True)
-        st.write("Click on a colour to remove the Group")
-
-    
-        
-    with st.container():
-        #hover data sind die die angezeigt werden beim darüber fahren mit der maus
-        hover_data = {'Technology': False,
-                      'possible methanation capacity in kW' : True,
-                      'Evaluation Points' : True  ,
-                      'lat': True,
-                      'lon': True,
-                      'size' : False,
-                      'Colour': False
-                }
-        
-        
-        df_mima = df.query("`Group` >= @CH4_min and `Group` <= @CH4_max")
-        
-        if industry_type == "All":
-            load_map(df_mima, size, map_style)
-        
-        
-        else: #filtern mit der query methode
-            df1 = df_mima.query("Technology == @industry_type")
-            load_map(df1, size, map_style)
+        #st.write("Click on a colour to remove the Group")
      
+        with st.container():
+            #hover data sind die die angezeigt werden beim darüber fahren mit der maus
+            hover_data = {'Technology': False,
+                          'possible methanation capacity in kW' : True,
+                          'Evaluation Points' : True  ,
+                          'lat': True,
+                          'lon': True,
+                          'size' : False,
+                          'Colour': False
+                          }
+            
+            
+            df_mima = df.query("`Group` >= @CH4_min and `Group` <= @CH4_max")
+            
+            if industry_type == "All":
+                load_map(df_mima, size, map_style)
+            
+            
+            else: #filtern mit der query methode
+                df1 = df_mima.query("Technology == @industry_type")
+                load_map(df1, size, map_style)
+                
+                
+                
 with tab3:
     st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     st.subheader('Documentation')
