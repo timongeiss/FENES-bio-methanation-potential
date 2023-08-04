@@ -108,7 +108,7 @@ def load_map(input_df, size, map_style):
 st.set_page_config(page_title="Methanation potential Germany", page_icon=":factory:", layout="wide", initial_sidebar_state = "collapsed" )
 
 
-col1, col2, col3 = st.columns([4,1,2])
+col1, col2, col3 = st.columns([7,1,2])
 with col1:
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES) OTH Regensburg')
 with col3:
@@ -125,13 +125,13 @@ with tab1:
     #--- HEADER SECTION ---
     st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     st.write("")
-    st.markdown('<div style="background-color: white; padding: 5px;"><h1 style="color: #5B5B5B;">Biological methanation potential in German industries</h1></div>', unsafe_allow_html=True)
+    st.markdown('<div style="background-color: white; padding: 5px;"><h1 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h1></div>', unsafe_allow_html=True)
     st.write("")
     #st.write("[orbit-projekt.de](https://orbit-projekt.de/)")
 
 
     #--- DESCRIPTION SECTION ---
-    st.subheader('Introduction')
+    #st.subheader('Introduction')
     st.write(
         """
         The ORBIT II research project is concerned with the conversion of carbon dioxide (CO2) and hydrogen (H2) to methane by means of biological methanation. The focus is on the storage of electricity from renewable sources in the form of methane. Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated. For this purpose, different waste gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants, wastewater treatment plants and landfills are tested.
