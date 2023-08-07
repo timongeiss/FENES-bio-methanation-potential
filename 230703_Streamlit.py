@@ -217,6 +217,8 @@ with tab3:
     st.write("Hier wird Daniel Werbung stehlen.")
 
 
+
+st.write("")
 st.write("")
 st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
 col1, col2, col3 = st.columns([6,1,2])
