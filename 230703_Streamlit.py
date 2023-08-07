@@ -129,10 +129,11 @@ tab1, tab2, tab3 = st.tabs(["Introduction", "Visualisation", "Documentation"])
 with tab1:
 
     #--- DESCRIPTION SECTION ---
-    #st.subheader('Introduction')
+    st.subheader('Introduction')
     st.write("""The ORBIT II research project is concerned with the conversion of carbon dioxide and hydrogeno methane by means of biological methanation.
              The basic equation for this is:""")
-    st.latex(r'$$\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}$$')
+    st.latex(r'CO_{2}')
+    st.latex(r'\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}')
     st.write("""The focus is on the storage of electricity from renewable sources in the form of methane
              Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated.
              For this purpose, different waste and sewage gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
