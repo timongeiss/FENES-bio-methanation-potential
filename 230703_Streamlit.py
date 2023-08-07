@@ -130,8 +130,9 @@ with tab1:
 
     #--- DESCRIPTION SECTION ---
     #st.subheader('Introduction')
-    st.write("The [ORBIT II](https://orbit-projekt.de/) research project is concerned with the conversion of carbon dioxide and hydrogeno methane by means of biological methanation. ")
-    st.latex('$$\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}$$')
+    st.write("""The ORBIT II research project is concerned with the conversion of carbon dioxide and hydrogeno methane by means of biological methanation.
+             The basic equation for this is:""")
+    st.latex(r'$$\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}$$')
     st.write("""The focus is on the storage of electricity from renewable sources in the form of methane
              Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated.
              For this purpose, different waste and sewage gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
@@ -236,6 +237,8 @@ with col1:
     st.write("")
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
+    st.write("Learn more about the [ORBIT II](https://orbit-projekt.de/) research project")
+    
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
 with col2:
     st.write("")
