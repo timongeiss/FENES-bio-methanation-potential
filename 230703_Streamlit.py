@@ -131,8 +131,7 @@ with tab1:
     #--- DESCRIPTION SECTION ---
     st.subheader('Introduction')
     st.write("The ORBIT II research project is concerned with the conversion of carbon dioxide and hydrogeno methane by means of biological methanation.")
-    st.write("The basic equation for this is:")
-    st.latex(r'\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}')
+
     st.write("""The focus is on the storage of electricity from renewable sources in the form of methane
              Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated.
              For this purpose, different waste and sewage gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
@@ -142,6 +141,9 @@ with tab1:
              Each site received a score consisting of a technology type score and a regional score.
              The technology type score was based on waste gas composition, steadiness of waste gas availability, and other criteria.
              The regional assessment was performed at the county level through survey analysis regarding the energy transition.""")
+             
+    st.write("The basic equation for this is:")
+    st.latex(r'\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}')
              
     st.write("➡ More about the rating you will find in the tab documentation.")
         
