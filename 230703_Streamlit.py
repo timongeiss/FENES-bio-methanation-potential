@@ -118,8 +118,6 @@ tab1, tab2, tab3 = st.tabs(["Introduction", "Visualisation", "Documentation"])
 with tab1:
     
     #--- HEADER SECTION ---
-    st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
-    st.write("")
     st.markdown('<div style="background-color: white; padding: 4px;"><h2 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h2></div>', unsafe_allow_html=True)
     #st.write("")
 
@@ -156,7 +154,7 @@ with tab1:
 
 
 with tab2:
-    st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
+    #st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     col1, col2 = st.columns([6,2])
     
     
@@ -212,13 +210,15 @@ with tab2:
                 
                 
 with tab3:
-    st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
+    #st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     st.subheader('Documentation')
     for i in range(0,10):
         st.write("Hier wird Daniels Werbung stehen.")
     st.write("Hier wird Daniel Werbung stehlen.")
 
 
+st.write("")
+st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
 col1, col2, col3 = st.columns([6,1,2])
 with col1:
     st.write("")
