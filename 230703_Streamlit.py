@@ -118,12 +118,11 @@ col1, col2 = st.columns([6,1])
 with col1:
     st.write("")
     st.markdown('<div style="background-color: white; padding: 4px;"><h2 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h2></div>', unsafe_allow_html=True)
-    st.write("")
 
 with col2:
-    st.image("https://www.fenes.net/wp-content/uploads/2021/12/2021_12_01_Logo_ORBIT-II_quadratisch.svg")
+    st.image("https://orbit-projekt.de/wp-content/uploads/2021/03/2021_12_01_Logo_ORBIT-II-300x95.jpg")
 
-st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
+#st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
 
 tab1, tab2, tab3 = st.tabs(["Introduction", "Visualisation", "Documentation"])
 
@@ -168,6 +167,11 @@ with tab2:
     #--- MAP FILTER ---
     with col2:
         
+        st.subheader("Evaluation Adjustments")
+        st.write("⬅ Click on the colour to filter the groups."
+        st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
+        
+        
         st.subheader("Data Adjustments")
         industry_type = st.selectbox(
         "Technology Type",
@@ -176,8 +180,7 @@ with tab2:
            "Range of possible methanation capacity in Groups", 0, 3, (1, 3), step=1, help="0: <100 kW, 1: 100-500 kW,  2: 500-1000 kW, 3: > 1000 kW \n (A methanation capacity lower than 100 kW is not economical due to the number of full load hours)")
         
         
-        st.subheader("Evaluation Adjustments")
-        st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
+
 
 
 
