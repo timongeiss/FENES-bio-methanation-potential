@@ -19,6 +19,7 @@ import plotly.express as px
 file_path = "230704_Standorte.xlsx"
 df = pd.read_excel(file_path, usecols=["Standortnummer", "Typ", "Lat", "Lon", "m?gliche CH4 in kW", "Punktzahl gesamt", "Potenzial"])
 df.columns = ["Location number", "Technology", "lat", "lon", "possible methanation capacity in kW", "Evaluation Points", "Hydrogen Potential"]
+df['Evaluation Points'] = df['Evaluation Points'].round(2)
 
 
 #Einteilung in Gruppen nach Leistung
@@ -73,36 +74,35 @@ def set_size_based_on_capacity(input_df, size):
     
 
 def load_map(input_df, size, map_style):
+
+    #input_df['size'] = 5
+    result_df = set_size_based_on_capacity(input_df, size)
     
-    with st.spinner(text="In progress..."):
-        #input_df['size'] = 5
-        result_df = set_size_based_on_capacity(input_df, size)
-        
-        if not result_df.empty:
-            fig = px.scatter_mapbox(
-                input_df,
-                lat="lat",
-                lon="lon",
-                #mapbox_style="stamen-terrain",
-                mapbox_style=map_style,
-                color="Colour",  # Farbinformation aus dem DataFrame verwenden
-                color_discrete_map={
-                    "rgb(255,0,0)": "rgb(255,0,0)",      # Rot
-                    "rgb(255,165,0)": "rgb(255,165,0)",  # Orange
-                    "rgb(255,255,0)": "rgb(255,255,0)",  # Gelb
-                    "rgb(0,128,0)": "rgb(0,128,0)" },     # Grün
-                size="size",
-                size_max=size*6,
-                zoom=5,
-                height=1000,
-                hover_data=hover_data,
-                hover_name="Technology",
-            )
-        
-            st.plotly_chart(fig, use_container_width=True)
-        
-        else:
-            st.error("Sorry, no data to display. Please adjust your filters.")
+    if not result_df.empty:
+        fig = px.scatter_mapbox(
+            input_df,
+            lat="lat",
+            lon="lon",
+            #mapbox_style="stamen-terrain",
+            mapbox_style=map_style,
+            color="Colour",  # Farbinformation aus dem DataFrame verwenden
+            color_discrete_map={
+                "rgb(255,0,0)": "rgb(255,0,0)",      # Rot
+                "rgb(255,165,0)": "rgb(255,165,0)",  # Orange
+                "rgb(255,255,0)": "rgb(255,255,0)",  # Gelb
+                "rgb(0,128,0)": "rgb(0,128,0)" },     # Grün
+            size="size",
+            size_max=size*6,
+            zoom=5,
+            height=1000,
+            hover_data=hover_data,
+            hover_name="Technology",
+        )
+    
+        st.plotly_chart(fig, use_container_width=True)
+    
+    else:
+        st.error("Sorry, no data to display. Please adjust your filters.")
 
 
 
@@ -121,7 +121,6 @@ with col1:
 with col2:
     st.image("https://www.fenes.net/wp-content/uploads/2021/12/2021_12_01_Logo_ORBIT-II_quadratisch.svg")
 with col3:
-    st.write("")
     st.write("")
     st.image("https://gerotor.tech/wp-content/uploads/2018/03/Fenes-Logo-300x103.png")
 
