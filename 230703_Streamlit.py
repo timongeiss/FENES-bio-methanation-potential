@@ -110,14 +110,13 @@ def load_map(input_df, size, map_style):
 ### STREAMLIT
 
 #--- SETUP WEBSITE CONFIG ---
-im = Image.open("2021_12_01_Logo_ORBIT-II-300x95.jpg")
+im = Image.open("2021_12_01_Logo_ORBIT-II_quadratisch.svg")
 st.set_page_config(page_title="Methanation potential Germany", page_icon=im, layout="wide", initial_sidebar_state = "collapsed" )
 
  #--- HEADER SECTION ---
 col1, col2 = st.columns([6,1])
  
 with col1:
-    st.write("")
     st.markdown('<div style="background-color: white; padding: 4px;"><h2 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h2></div>', unsafe_allow_html=True)
 
 with col2:
