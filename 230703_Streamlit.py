@@ -110,7 +110,7 @@ def load_map(input_df, size, map_style):
 ### STREAMLIT
 
 #--- SETUP WEBSITE CONFIG ---
-im = Image.open("https://orbit-projekt.de/wp-content/uploads/2021/03/2021_12_01_Logo_ORBIT-II-300x95.jpg")
+im = Image.open("2021_12_01_Logo_ORBIT-II-300x95.jpg")
 st.set_page_config(page_title="Methanation potential Germany", page_icon=im, layout="wide", initial_sidebar_state = "collapsed" )
 
  #--- HEADER SECTION ---
