@@ -131,7 +131,9 @@ with tab1:
     #--- DESCRIPTION SECTION ---
     st.subheader('Introduction')
     st.write("The ORBIT II research project is concerned with the conversion of carbon dioxide and hydrogeno methane by means of biological methanation.")
-
+    st.write("The basic equation for this is:")
+    st.latex(r'\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}')
+    st.write("")
     st.write("""The focus is on the storage of electricity from renewable sources in the form of methane
              Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated.
              For this purpose, different waste and sewage gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
@@ -142,20 +144,17 @@ with tab1:
              The technology type score was based on waste gas composition, steadiness of waste gas availability, and other criteria.
              The regional assessment was performed at the county level through survey analysis regarding the energy transition.""")
              
-    st.write("The basic equation for this is:")
-    st.latex(r'\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}')
-             
     st.write("➡ More about the rating you will find in the tab documentation.")
-        
+    
+    st.write("")    
     st.subheader('Map description')
     st.write(
         """
         The results of the evaluation are shown on a map of germany. The map shows the potential methanation capacities and their score of various industrial sites in germany.
-        
-        Each point represents an industry/technology location. The size of the points is based on the potential methanation capacity.  The point scale is divided into four groups, which are colored red, orange, yellow and green to indicate how suitable a location is.
-
-        ➡ Click in the Tab 'Visualisation' to open the Map
+        Each point represents an industry/technology location. The size of the points is based on the potential methanation capacity. 
+        The point scale is divided into four groups, which are colored red, orange, yellow and green to indicate how suitable a location is.
         """)
+    st.write("➡ Click in the Tab 'Visualisation' to open the Map")
 
 
 
