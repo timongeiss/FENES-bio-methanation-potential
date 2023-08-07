@@ -111,7 +111,7 @@ def load_map(input_df, size, map_style):
 st.set_page_config(page_title="Methanation potential Germany", page_icon=":factory:", layout="wide", initial_sidebar_state = "collapsed" )
 
 
-col1, col2, col3 = st.columns([6,1,2])
+col1, col2, col3 = st.columns([1,6,2])
 with col2:
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
@@ -141,23 +141,25 @@ with tab1:
     st.latex('$$\text{CO}_2 + 4\text{H}_2 \rightarrow \text{CH}_4 + 2\text{H}_2\text{O}$$')
     st.write("""The focus is on the storage of electricity from renewable sources in the form of methane
              Different industries and technologies are considered as potential CO2 sources and their synergies with biological methanation are evaluated.
-             For this purpose, different waste gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
+             For this purpose, different waste and sewage gases, especially from bioethanol production, biogas plants with and without upgrading, cement plants,
              wastewater treatment plants and landfills are tested. ORBIT II aims to integrate power-to-gas plants, optimize system integration and reduce costs.
              In addition, the use of biogenic waste materials as educt gases for methanation is being advanced.
              To this end, a site assessment was conducted for these technologies and industries.
              Each site received a score consisting of a technology type score and a regional score.
              The technology type score was based on waste gas composition, steadiness of waste gas availability, and other criteria.
              The regional assessment was performed at the county level through survey analysis regarding the energy transition.
+             
+             ➡ More about the rating you will find in the tab documentation.
              """)
         
     st.subheader('Map description')
     st.write(
         """
-        The results are shown on a map of germany. The map shows the potential methanation capacities and their score of various industrial sites in germany.
+        The results of the evaluation are shown on a map of germany. The map shows the potential methanation capacities and their score of various industrial sites in germany.
         
         Each point represents an industry/technology location. The size of the points is based on the potential methanation capacity.  The point scale is divided into four groups, which are colored red, orange, yellow and green to indicate how suitable a location is.
 
-        Click in the Tab 'Visualisation' to open the Map
+        ➡ Click in the Tab 'Visualisation' to open the Map
         """)
         #st.write("Learn more about the project [ORBIT II](https://orbit-projekt.de/).")
 
