@@ -154,9 +154,8 @@ with tab1:
 
         ➡ Click in the Tab 'Visualisation' to open the Map
         """)
-        #st.write("Learn more about the project [ORBIT II](https://orbit-projekt.de/).")
 
-
+    st.write("Learn more about the [ORBIT II](https://orbit-projekt.de/) research project")
 
 
 with tab2:
@@ -169,6 +168,11 @@ with tab2:
         
         st.subheader("Evaluation Adjustments")
         st.write("⬅ Click on the colour to filter the groups.")
+        st.write("Red: Bezeichnung")
+        st.write("Orange: Bezeichnung")
+        st.write("Yellow: Bezeichnung")
+        st.write("Green: Bezeichnung")
+        
         st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
         
         
@@ -236,7 +240,7 @@ with col1:
     st.write("")
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
-    st.write("Learn more about the [ORBIT II](https://orbit-projekt.de/) research project")
+
     
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
 with col2:
