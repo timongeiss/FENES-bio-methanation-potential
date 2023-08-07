@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
-
+from PIL import Image
 
 
 #--- PROCESS DATA AREA ---
@@ -110,7 +110,8 @@ def load_map(input_df, size, map_style):
 ### STREAMLIT
 
 #--- SETUP WEBSITE CONFIG ---
-st.set_page_config(page_title="Methanation potential Germany", page_icon=":factory:", layout="wide", initial_sidebar_state = "collapsed" )
+im = Image.open("https://orbit-projekt.de/wp-content/uploads/2021/03/2021_12_01_Logo_ORBIT-II-300x95.jpg")
+st.set_page_config(page_title="Methanation potential Germany", page_icon=im, layout="wide", initial_sidebar_state = "collapsed" )
 
  #--- HEADER SECTION ---
 col1, col2 = st.columns([6,1])
@@ -168,7 +169,7 @@ with tab2:
     with col2:
         
         st.subheader("Evaluation Adjustments")
-        st.write("⬅ Click on the colour to filter the groups."
+        st.write("⬅ Click on the colour to filter the groups.")
         st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
         
         
