@@ -112,15 +112,22 @@ def load_map(input_df, size, map_style):
 #--- SETUP WEBSITE CONFIG ---
 st.set_page_config(page_title="Methanation potential Germany", page_icon=":factory:", layout="wide", initial_sidebar_state = "collapsed" )
 
+ #--- HEADER SECTION ---
+col1, col2 = st.columns([6,1])
+ 
+with col1:
+    st.write("")
+    st.markdown('<div style="background-color: white; padding: 4px;"><h2 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h2></div>', unsafe_allow_html=True)
+    st.write("")
+
+with col2:
+    st.image("https://www.fenes.net/wp-content/uploads/2021/12/2021_12_01_Logo_ORBIT-II_quadratisch.svg")
+
+st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
 
 tab1, tab2, tab3 = st.tabs(["Introduction", "Visualisation", "Documentation"])
 
 with tab1:
-    
-    #--- HEADER SECTION ---
-    st.markdown('<div style="background-color: white; padding: 4px;"><h2 style="color: #5B5B5B;">Biological methanation potential with German waste gases</h2></div>', unsafe_allow_html=True)
-    #st.write("")
-
 
     #--- DESCRIPTION SECTION ---
     #st.subheader('Introduction')
@@ -221,14 +228,12 @@ with tab3:
 st.write("")
 st.write("")
 st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
-col1, col2, col3 = st.columns([6,1,2])
+col1, col2 = st.columns([6,2])
 with col1:
     st.write("")
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
 with col2:
-    st.image("https://www.fenes.net/wp-content/uploads/2021/12/2021_12_01_Logo_ORBIT-II_quadratisch.svg")
-with col3:
     st.write("")
     st.image("https://gerotor.tech/wp-content/uploads/2018/03/Fenes-Logo-300x103.png")
