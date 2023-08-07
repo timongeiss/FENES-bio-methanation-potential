@@ -154,6 +154,7 @@ with tab1:
         Each point represents an industry/technology location. The size of the points is based on the potential methanation capacity. 
         The point scale is divided into four groups, which are colored red, orange, yellow and green to indicate how suitable a location is.
         """)
+        
     st.write("➡ Click in the Tab 'Visualisation' to open the Map")
 
 
@@ -166,7 +167,7 @@ with tab2:
     
     #--- MAP FILTER ---
     with col2:
-        
+        st.write("")
         st.subheader("Evaluation Adjustments")
         st.write("⬅ Click on the colour to filter the groups.")
         # st.write("Red: Bezeichnung")
