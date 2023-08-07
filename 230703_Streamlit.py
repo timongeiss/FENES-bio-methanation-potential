@@ -144,7 +144,7 @@ with tab1:
              The technology type score was based on waste gas composition, steadiness of waste gas availability, and other criteria.
              The regional assessment was performed at the county level through survey analysis regarding the energy transition.""")
              
-    st.write("➡ More about the rating you will find in the tab documentation.")
+    st.write("➡ More about the rating you will find in the tab 'documentation'.")
     
     st.write("")    
     st.subheader('Map description')
@@ -175,9 +175,9 @@ with tab2:
         # st.write("Yellow: Bezeichnung")
         # st.write("Green: Bezeichnung")
         
-        st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
-        st.write("")
+        #st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
         
+        st.write("")
         st.subheader("Data Adjustments")
         industry_type = st.selectbox(
         "Technology Type",
