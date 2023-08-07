@@ -110,7 +110,7 @@ def load_map(input_df, size, map_style):
 ### STREAMLIT
 
 #--- SETUP WEBSITE CONFIG ---
-im = Image.open("2021_12_01_Logo_ORBIT-II_quadratisch.svg")
+im = Image.open("csm_FENES_Logo_432e442b03.jpg")
 st.set_page_config(page_title="Methanation potential Germany", page_icon=im, layout="wide", initial_sidebar_state = "collapsed" )
 
  #--- HEADER SECTION ---
