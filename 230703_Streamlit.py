@@ -155,7 +155,7 @@ with tab1:
         ➡ Click in the Tab 'Visualisation' to open the Map
         """)
 
-    st.write("Learn more about the [ORBIT II](https://orbit-projekt.de/) research project")
+
 
 
 with tab2:
@@ -168,13 +168,13 @@ with tab2:
         
         st.subheader("Evaluation Adjustments")
         st.write("⬅ Click on the colour to filter the groups.")
-        st.write("Red: Bezeichnung")
-        st.write("Orange: Bezeichnung")
-        st.write("Yellow: Bezeichnung")
-        st.write("Green: Bezeichnung")
+        # st.write("Red: Bezeichnung")
+        # st.write("Orange: Bezeichnung")
+        # st.write("Yellow: Bezeichnung")
+        # st.write("Green: Bezeichnung")
         
         st.write("Filter the displayed locations by the score. This can be done either in groups or individually with the slider.")
-        
+        st.write("")
         
         st.subheader("Data Adjustments")
         industry_type = st.selectbox(
@@ -182,12 +182,9 @@ with tab2:
         np.insert(df.Technology.unique(), 0, "All",))
         CH4_min, CH4_max = st.slider(
            "Range of possible methanation capacity in Groups", 0, 3, (1, 3), step=1, help="0: <100 kW, 1: 100-500 kW,  2: 500-1000 kW, 3: > 1000 kW \n (A methanation capacity lower than 100 kW is not economical due to the number of full load hours)")
-        
-        
 
 
-
-
+        st.write("")
         st.subheader("Map Adjustments")  
         size = st.slider(
         "Size of the dots", 0.5, 3.0, (1.0), step=0.5, help="Pick a size")
@@ -240,7 +237,7 @@ with col1:
     st.write("")
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
     st.text('OTH Regensburg')
-
+    st.write("[ORBIT II](https://orbit-projekt.de/)")
     
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
 with col2:
