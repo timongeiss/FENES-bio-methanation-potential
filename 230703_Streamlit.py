@@ -236,10 +236,11 @@ st.write("")
 st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
 col1, col2 = st.columns([6,2])
 with col1:
-    st.write("")
-    st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES)')
-    st.text('OTH Regensburg')
+    st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES) OTH Regensburg')
     st.write("[ORBIT II](https://orbit-projekt.de/)")
+    st.write("[Kontakt](https://orbit-projekt.de/kontakt/)")
+    st.write("[Impressum](https://orbit-projekt.de/impressum/)")
+    st.write("[Datenschutz](https://orbit-projekt.de/datenschutz/)")
     
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
 with col2:
