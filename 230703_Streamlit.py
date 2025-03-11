@@ -225,9 +225,8 @@ with tab2:
 with tab3:
     #st.markdown('<div style="background-color: #69B73D; padding: 2px;">', unsafe_allow_html=True)
     st.subheader('Documentation')
-    for i in range(0,10):
-        st.write("Hier wird Daniels Werbung stehen.")
-    st.write("Hier wird Daniel Werbung stehlen.")
+
+    st.write("Dokumentation zur Karte in Arbeit")
 
 
 
