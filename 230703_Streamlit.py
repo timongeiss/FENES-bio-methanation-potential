@@ -244,4 +244,4 @@ with col1:
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
 with col2:
     st.write("")
-    st.image("https://gerotor.tech/wp-content/uploads/2018/03/Fenes-Logo-300x103.png")
+    st.image("https://i1.rgstatic.net/ii/lab.file/AS%3A743530234400787%401554282830820_xl")
