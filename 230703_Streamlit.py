@@ -237,9 +237,9 @@ col1, col2 = st.columns([6,2])
 with col1:
     st.text('Forschungsstelle für Energiespeicher und Energienetze (FENES) OTH Regensburg')
     st.write("[ORBIT II](https://orbit-projekt.de/)")
-    st.write("[Kontakt](https://orbit-projekt.de/kontakt/)")
-    st.write("[Impressum](https://orbit-projekt.de/impressum/)")
-    st.write("[Datenschutz](https://orbit-projekt.de/datenschutz/)")
+    st.write("[Kontakt](https://orbit-projekt.de/?page_id=25/)")
+    st.write("[Impressum](https://orbit-projekt.de/?page_id=23/)")
+    st.write("[Datenschutz](https://orbit-projekt.de/?page_id=575/)")
     
     #st.write("[ORBIT II](https://orbit-projekt.de/)")
 with col2:
